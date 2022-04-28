@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table class="table table-striped">
+
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Contact</th>
+    </tr>
+    {% if employee %}
+    {% for i in employee%}
+    <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.eid}}</td>
+        <td>{{i.ename}}</td>
+        <td>{{i.eemail}}</td>
+        <td>{{i.econtact}}</td>
+        <td><a href="/edit/{{ i.id }}">Edit</a></td>
+        <td><a href="/delete/{{ i.id }}">delete</a></td>
+        <td><a href="/search/{{ i.id }}">search</a></td>
+    </tr>
+    {% endfor %}
+    {% else %}
+   <p>Siz qidirgan ma`lumot topilmadi</p>
+    {% endif %}
+</table>
+{% endblock %}
